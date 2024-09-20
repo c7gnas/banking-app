@@ -33,6 +33,7 @@ declare type User = {
   dwollaCustomerId: string;
   firstName: string;
   lastName: string;
+  name: string;
   address1: string;
   city: string;
   state: string;
@@ -89,6 +90,7 @@ declare type Bank = {
   fundingSourceUrl: string;
   userId: string;
   sharableId: string;
+  currentbalance: number;
 };
 
 declare type AccountTypes =
@@ -210,6 +212,7 @@ declare interface TotalBalanceBoxProps {
 
 declare interface FooterProps {
   user: User;
+  type?: 'mobile' | 'desktop';
 }
 
 declare interface RightSidebarProps {
