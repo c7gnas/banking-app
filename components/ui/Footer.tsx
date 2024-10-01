@@ -1,6 +1,6 @@
 import { logoutAccount } from '@/lib/actions/user.actions'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+import { redirect, useRouter } from 'next/navigation'
 import React from 'react'
 
 const Footer = ( { user, type = 'desktop' }: FooterProps) => {
@@ -9,7 +9,7 @@ const Footer = ( { user, type = 'desktop' }: FooterProps) => {
     const handleLogOut  = async () => {
         const loggedOut = await logoutAccount();
 
-        if(loggedOut) router.push('/sign-in')
+        if(loggedOut) redirect('/sign-in')
     }
   return (
     <footer className='footer'>
